@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import react, { useEffect } from "react";
+import Header from "./components/Header/Header";
+import styled from 'styled-components';
+import { Container } from "./components/Container/Container";
+import AppRouter from "./components/AppRouter";
+
+const Main = styled.main`
+padding: 2.5rem 0;
+
+@media (min-width:767px) {
+   padding: 4rem 0;
+}
+`
+const Content = styled.div`
+`
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+   return (
+      <>
+         <Header />
+         <Main>
+            <Container>
+               <Content>
+                  <AppRouter />
+               </Content>
+            </Container>
+         </Main>
+      </>
+   );
 }
 
 export default App;
